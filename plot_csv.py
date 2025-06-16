@@ -4,6 +4,11 @@ matplotlib.use("TkAgg")  # or "Qt5Agg" if you have PyQt installed
 import matplotlib.pyplot as plt
 import argparse
 from sklearn.preprocessing import StandardScaler
+import matplotlib.cm as cm
+import matplotlib.colors as mcolors
+
+# Use a less aggressive colormap (e.g., Set2)
+colors = plt.get_cmap("tab20").colors
 
 # Set up argument parsing
 parser = argparse.ArgumentParser(description="Plot traffic count from a CSV file.")
@@ -23,7 +28,7 @@ for i, csv_file in enumerate(csv_file):
     # Normalize the data
     scaler = StandardScaler()
     df.iloc[:,1:] = scaler.fit_transform(df.iloc[:,1:])
-    plt.plot(df["Date"], df.iloc[:,1], linewidth=1, label=f"Dataset {i+1} - {csv_file.split('/')[-1]}")
+    plt.plot(df["Date"], df.iloc[:,1], linewidth=2, label=f"Dataset {i+1} - {csv_file.split('/')[-1]}", color=colors[i % len(colors)])
 
 # Formatting the plot
 plt.xlabel("Date")
