@@ -15,11 +15,12 @@ PI_ExpllAI-Mobility/
 │   ├── EDA reports/          # Exploratory Data Analysis reports are saved here
 │   └── requirements.txt      # requirements for data analysis part           
 ├── prediction/               # Predictive modeling and evaluation
-│   ├── data/               
-│   ├── ev_scenarios/
-│   ├── images/
-│   ├── prediction-results/         
-│   └── reuquirements.txt     # requirements for the prediction part
+│   ├── data/                 # Data sources for predictions
+│   ├── ev_scenarios/         # Scenarios creation
+│   ├── images/               # Generated images
+│   ├── notebook/             # Jupyter notebooks for predictions
+│   ├── prediction-results/   # Predictions results storage
+│   └── requirements.txt      # requirements for the prediction part
 ├── .gitignore                 # Standard ignores (e.g. data, models)
 └── README.md                  # Project overview and instructions
 ```
